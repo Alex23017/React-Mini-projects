@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+.App-quiz {
+  width: 400px;
+  border-radius: 30px;
+  padding: 40px;
+  background-color: #fff;
+  position: relative;
+}
+.App-quiz .result {
+  text-align: center;
+}
+.App-quiz .result button {
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  border-radius: 30px;
+  border: 0;
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #f00067;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.App-quiz .result h2 {
+  margin-bottom: 0;
+}
+.App-quiz .result img {
+  width: 150px;
+}
+.App-quiz .progress {
+  height: 10px;
+  border-radius: 30px;
+  background-color: rgb(232, 232, 232);
+  margin-bottom: 25px;
+}
+.App-quiz .progress__inner {
+  height: 100%;
+  border-radius: 30px;
+  width: 80%;
+  background: rgb(18, 231, 48);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(90deg, rgb(18, 231, 48) 0%, rgb(0, 212, 255) 100%);
+}
+.App-quiz:before, .App-quiz:after {
+  content: "";
+  display: block;
+  height: 50px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.App-quiz:before {
+  width: 95%;
+  bottom: -10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 0;
+}
+.App-quiz:after {
+  width: 90%;
+  bottom: -20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+.App-quiz h1 {
+  margin: 0;
+  font-size: 34px;
+}
+.App-quiz ul {
+  list-style: none;
+  padding: 0;
+}
+.App-quiz ul li {
+  padding: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.App-quiz ul li:hover {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}/*# sourceMappingURL=index.css.map */

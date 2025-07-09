@@ -1,0 +1,52 @@
+.container-items {
+  padding: 60px;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &.container-items a:after {
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: rgb(137, 134, 134);
+    height: 2px;
+    margin-block: 20px;
+    opacity: 0.5;
+  }
+}
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+}
+a:active,
+a:focus,
+a:hover,
+a::before,
+a::after {
+  color: inherit; /* или любой нужный цвет */
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
+li:hover {
+  border: none;
+}
+
+
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: blue;
+    width: 150px;
+  height: 150px;
+}
+
+.items_skeleton {
+  background-color: grey;
+  width: 150px;
+  height: 150px;
+}
