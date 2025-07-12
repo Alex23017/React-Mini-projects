@@ -9,6 +9,7 @@ import AppConvector from "../ConvectorValue/src/AppConvector";
 import AppGallery from "../CollectionGallery/AppGallery";
 import Test from "../LazyLoading/LazyLoading";
 import LazyLoading from "../LazyLoading/LazyLoading";
+import Test2 from "../Test2/Test2";
 
 const Home = () => {
   return (
@@ -39,6 +40,9 @@ const Home = () => {
 
       <Link to={"/test"}>
         <Test />
+      </Link>
+      <Link to={"/test2"}>
+        <Test2 />
       </Link>
     </div>
   );

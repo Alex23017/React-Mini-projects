@@ -51,10 +51,15 @@ const listCat = [
     title: "Test",
     path: "/test",
   },
+  {
+    id: 10,
+    title: "Test2",
+    path: "/test2",
+  },
 ];
 
 const Header = () => {
-  const [categories, setCategories] = useState(0);
+  const [categories, setCategories] = useState(1);
   const { theme, toggleTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
@@ -68,11 +73,16 @@ const Header = () => {
     }
   }, [location.pathname]);
 
+ 
+
+  
+
   return (
     <>
       <header className="header">
         <nav className="nav">
-          <ul className="nav-list">
+          <ul className="nav-list ">
+
             {listCat.map((item) => (
               <li
                 key={item.id}
@@ -83,10 +93,10 @@ const Header = () => {
             ))}
             <div
               onClick={toggleTheme}
-              className={`toggleDay-container ${theme === "dark" ? "backgroundNight" : ""}`}>
+              className={`toggleDay-container dark:shadow-white shadow-black shadow-md dark:shadow-sm ${theme === "dark" ? "backgroundNight" : ""}`}>
               <div className={`toggleDay-img ${theme === "dark" ? "theme_moon" : "theme_light"}`}>
                 <img
-                  className={theme === "dark" ? "theme_moon" : "theme_light"}
+                  className={`shadow-md shadow-black dark:shadow-white ${theme === "dark" ? "theme_moon" : "theme_light"}`}
                   src={theme === "dark" ? moon : sun}
                   alt=""
                 />

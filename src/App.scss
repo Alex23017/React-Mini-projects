@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 
-
+ 
 body {
   padding: 0;
   margin: 0;
   height: 100vh;
 &.dark {
-  background-color: black;
+  background-color:#111827;
 }
 &.light {
   background-color: white;
