@@ -14,7 +14,7 @@ const Test = () => {
   //   return saved === "dark" || saved === "light" ? saved : "light";
   // });
 
-  //replace toggleTheme
+  //replace toggleTheme() to setDay()
   // const clickDay = () => {
   //   setDay((prevDay) => (prevDay === "light" ? "dark" : "light"));
   // };

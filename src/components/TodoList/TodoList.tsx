@@ -74,7 +74,8 @@ const TodoList = () => {
 
         </h1>
 
-        <div className="bg-gradient-to-r from-black/90  via-black/70 to-black/95 w-1/3 p-4 mt-4 flex justify-center rounded-2xl shadow-md shadow-[rgb(144,245,255)] dark:shadow-gray-300 flex-col gap-5 items-center ">
+        <div className="bg-gradient-to-r from-black/90  via-black/70 to-black/95 w-1/3 p-4 mt-4 flex justify-center rounded-2xl 
+        shadow-md shadow-[rgb(144,245,255)] dark:shadow-gray-300 flex-col gap-5 items-center ">
           {!isOpenEdit && (
             <>
               <div className="w-2/3">

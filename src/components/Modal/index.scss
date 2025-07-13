@@ -52,27 +52,30 @@
   max-width: 500px;
   max-height: 100%;
   padding: 40px 30px;
-  border-radius: 10px;
+  border-radius: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease-in-out;
 
+
   img {
-    border-radius: 5px;
+   border-radius: 100%;
     width: 100%;
   }
 
   svg {
+    background-color: white;
     position: absolute;
     right: 10px;
     top: 10px;
     height: 24px;
     width: 24px;
-    opacity: 0.3;
+    opacity: 0.5;
     cursor: pointer;
+    border-radius: 10px;
 
     &:hover {
       opacity: 1;

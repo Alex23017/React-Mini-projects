@@ -14,6 +14,7 @@ import Test from "./components/Test/Test";
 import TodoList from "./components/TodoList/TodoList";
 import Theme from "./components/Theme/Theme";
 import TaiwLindTheme from "./components/Test/components/TaiwLindTheme";
+import ScrollUp from "./components/ScrollUp/ScrollUp";
 
 function App() {
   const location = useLocation();
@@ -22,9 +23,14 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="wrapper h-screen">
+    <div className="wrapper h-screen w-screen">
       <Header />
-      <div className="fixed right-20 bottom-20  "><TaiwLindTheme /></div>
+      <div className="fixed right-20 bottom-56">
+        <ScrollUp />
+      </div>
+      <div className="fixed right-20 bottom-20  ">
+        <TaiwLindTheme />
+      </div>
 
       <Routes>
         <Route path={"/"} element={<Home />} />

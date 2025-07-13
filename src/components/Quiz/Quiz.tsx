@@ -7,6 +7,8 @@ import { answerQuestion, handleRestart } from "../../redux/quizSlice";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+import bgImage from "./assets/bdQuiz.jpg"
+
 type Icorrect = {
   correct: number;
   handleRestart: () => void;
@@ -74,7 +76,8 @@ function Quiz() {
 
   return (
 
-    <div className="container-quiz py-40">
+    <div className="container-quiz py-40 h-screen bg-cover bg-no-repeat bg-center"
+    style={{backgroundImage: `url(${bgImage})`}}> 
       <div className="App-quiz">
         <h1> <strong>Опросник:</strong></h1>
       {step !== questions.length ? (
