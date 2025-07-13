@@ -5,7 +5,7 @@ import "./style.scss";
 const Player = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  console.log("playing: ", playing);
+
 
   const togglePlay = () => {
     if (!audioRef.current) return;

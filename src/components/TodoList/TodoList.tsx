@@ -20,7 +20,7 @@ const TodoList = () => {
 
   const [value, setValue] = useState<string>("");
   const [isOpenRemove, setisOpenRemove] = useState(false);
-  console.log("isOpenRemove: ", isOpenRemove);
+
 
   const [isOpenEdit, setIsOpen] = useState<boolean>(false);
 
