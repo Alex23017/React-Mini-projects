@@ -8,24 +8,25 @@ import sun from "../Header/assets/sun.svg";
 import { useEffect, useState } from "react";
 
 const Test = () => {
-  const [day, setDay] = useState("light");
+  const [day, setDay] = useState(() => {
+    const saved = localStorage.getItem("storage")
+    return saved === "dark" || saved ==="light" ? saved: "light"
+  });
   const clickDay = () => {
     setDay((prevDay) => (prevDay === "light" ? "dark" : "light"));
   };
 
+
   useEffect(() => {
-    document.documentElement.className = day;
-    // if (day === "dark") {
-    //   root.classList.add("dark")
-    // } else {
-    //   root.classList.remove("dark")
-    // }
+    document.body.className = day;
+    localStorage.setItem("storage", day)
+
   }, [day]);
 
   const { theme } = useTheme();
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
-      <h1 className="text-5xl text-center">Tailwind</h1>
+      <h1 className="text-5xl py-5 text-center mt-5">Tailwind</h1>
       <header id="header" className="w-full bg-slate-400">
         <nav className="flex justify-center ">
           <ul className="flex gap-20 items-center ">

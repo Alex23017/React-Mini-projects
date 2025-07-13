@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import sun from "./assets/sun.svg";
 import moon from "./assets/moon.svg";
 import { useTheme } from "../ThemeContext/ThemeContext";
+import Player from "../TodoList/components/Player";
 
 const listCat = [
   {
@@ -53,8 +54,8 @@ const listCat = [
   },
   {
     id: 10,
-    title: "Test2",
-    path: "/test2",
+    title: "TodoList",
+    path: "/todolist",
   },
 ];
 
@@ -73,16 +74,11 @@ const Header = () => {
     }
   }, [location.pathname]);
 
- 
-
-  
-
   return (
     <>
-      <header className="header">
+      <header className="header bg-gradient-to-r from-rose-600 via-fuchsia-800 to-black shadow-md shadow-black dark:shadow-[rgb(144,245,255)]">
         <nav className="nav">
-          <ul className="nav-list ">
-
+          <ul className="nav-list">
             {listCat.map((item) => (
               <li
                 key={item.id}
@@ -91,19 +87,24 @@ const Header = () => {
                 <Link to={item.path}>{item.title}</Link>
               </li>
             ))}
-            <div
-              onClick={toggleTheme}
-              className={`toggleDay-container dark:shadow-white shadow-black shadow-md dark:shadow-sm ${theme === "dark" ? "backgroundNight" : ""}`}>
-              <div className={`toggleDay-img ${theme === "dark" ? "theme_moon" : "theme_light"}`}>
-                <img
-                  className={`shadow-md shadow-black dark:shadow-white ${theme === "dark" ? "theme_moon" : "theme_light"}`}
-                  src={theme === "dark" ? moon : sun}
-                  alt=""
-                />
-              </div>
-            </div>
           </ul>
         </nav>
+        <div className="flex gap-10 items-center bg-gradient-to-r from-black/70 via-fuchsia-700 to-black/70 p-2 pl-6 rounded-md">
+          <div
+            onClick={toggleTheme}
+            className={`toggleDay-container w-20 shadow-md shadow-[rgb(144,245,255)] ${theme === "dark" ? "backgroundNight" : ""}`}>
+            <div className={`toggleDay-img ${theme === "dark" ? "theme_moon" : "theme_light"}`}>
+              <img
+                className={`shadow-md shadow-[rgb(144,245,255)] ${theme === "dark" ? "theme_moon" : "theme_light"}`}
+                src={theme === "dark" ? moon : sun}
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <Player />
+          </div>
+        </div>
       </header>
 
       {open && (

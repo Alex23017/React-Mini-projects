@@ -1,0 +1,37 @@
+.bars-container {
+  width: 100px; /* или под себя */
+  height: 50px; /* фиксированная высота */
+  display: flex;
+  align-items: flex-end; /* чтобы бары выстраивались по низу */
+  justify-content: center;
+  gap:10px;
+
+}
+
+.bar {
+  width: 4px;
+  background-color: white;
+  height: 20%; /* 20% от 50px = 10px */
+  border-radius: 2px;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+  animation: none;
+}
+
+.playing .bar {
+  animation: heightPulse 2s ease-in-out infinite;
+  animation-play-state: running;
+}
+
+@keyframes heightPulse {
+  0%, 100% {
+    height: 20%;
+    opacity: 0.2;
+
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+       transform: scale(1.1);
+  }
+}

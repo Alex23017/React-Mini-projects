@@ -44,9 +44,9 @@ function Game({ step, question, onClickVarian }: IGame) {
         <div style={{ width: `${percentage}%` }} className="progress__inner"></div>
       </div>
       <h1>{question.title}</h1>
-      <ul>
+      <ul className="p-4">
         {question.variants.map((text, index) => (
-          <li onClick={() => onClickVarian(index)} key={index}>
+          <li className="p-4 shadow-md" onClick={() => onClickVarian(index)} key={index}>
             {text}
           </li>
         ))}
@@ -74,7 +74,7 @@ function Quiz() {
 
   return (
 
-    <div className="container-quiz">
+    <div className="container-quiz mt-20">
       <div className="App-quiz">
         <h1> <strong>Опросник:</strong></h1>
       {step !== questions.length ? (

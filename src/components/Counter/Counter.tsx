@@ -14,7 +14,7 @@ const Counter = () => {
   return (
     <div>
       <div className="container-counter">
-        <div className="counter">
+        <div className="counter shadow-md shadow-black mt-40">
           <h2>Счетчик:</h2>
           <h1 className="text-6xl p-4">{count}</h1>
           <div className="flex gap-4 justify-center">

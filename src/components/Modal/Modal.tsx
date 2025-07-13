@@ -10,8 +10,8 @@ function Modal() {
 
 
   return (
-    <div className="container-modal">
-      <button onClick={() => canOpen && dispatch(setOpen())} className="open-modal-btn">
+    <div className="container-modal mt-40 ">
+      <button onClick={() => canOpen && dispatch(setOpen())} className="open-modal-btn drop-shadow-lg">
         ✨ Открыть окно
       </button>
       <RenderPopup open={open} canOpen={canOpen} />

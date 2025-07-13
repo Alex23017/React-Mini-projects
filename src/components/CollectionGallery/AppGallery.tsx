@@ -56,7 +56,7 @@ function AppGallery() {
                 <li
                   key={item}
                   onClick={() => setCategoriesId(index)}
-                  className={categoriesId === index ? "active" : ""}>
+                  className={`${categoriesId === index ? "active shadow-md shadow-black" : ""}`}>
                   {item}
                 </li>
               ))

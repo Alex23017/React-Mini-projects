@@ -36,7 +36,7 @@
     "src/**/*.tsx",
     "src/**/*.d.ts",
     "src/utils/useModalPopup.tsx"
-, "src/components/ConvectorValue/src/AppConvector.jsx"  ],
+, "src/components/ConvectorValue/src/AppConvector.jsx", "src/components/TodoList/components/Player.tsx"  ],
   "exclude": [
     /* Массив паттернов glob, определяющих файлы для исключения из компиляции. */ "node_modules",
     "build",

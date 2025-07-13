@@ -11,7 +11,7 @@ import AppConvector from "./components/ConvectorValue/src/AppConvector";
 import AppGallery from "./components/CollectionGallery/AppGallery";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
 import Test from "./components/Test/Test";
-import Test2 from "./components/Test2/Test2";
+import TodoList from "./components/TodoList/TodoList";
 
 
 
@@ -36,7 +36,7 @@ function App() {
           <Route path={"/gallery"} element={<AppGallery />} />
           <Route path={"/lazyloading"} element={<LazyLoading />} />
           <Route path={"/test"} element={<Test />} />
-          <Route path={"/test2"} element={<Test2 />} />
+          <Route path={"/todolist"} element={<TodoList />} />
         </Routes>
       </div>
 

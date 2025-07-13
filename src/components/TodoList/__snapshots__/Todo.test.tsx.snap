@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST APP рендерит поле ввода и кнопку 1`] = `
+<input
+  class="focus:shadow-[rgb(144,245,255)] italic
+ font-medium text-black  focus:shadow-lg
+ shadow-black/50 p-2
+ rounded-lg text-center w-full
+ text-black/60
+ break-words shadow-md"
+  placeholder="write or search note..."
+  type="text"
+  value=""
+/>
+`;
+
+exports[`рендерит поле ввода и кнопку 1`] = `
+<input
+  class="focus:shadow-[rgb(144,245,255)] italic
+ font-medium text-black  focus:shadow-lg
+ shadow-black/50 p-2
+ rounded-lg text-center w-full
+ text-black/60
+ break-words shadow-md"
+  placeholder="write or search note..."
+  type="text"
+  value=""
+/>
+`;

@@ -2,9 +2,10 @@
   width: 100%;
   padding: 20px;
   display: flex;
-  background-color: rgb(82, 80, 192);
   border-radius: 5px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 
   .nav {
     margin: 0 auto;
@@ -80,7 +81,7 @@
     padding: 5px;
   }
   &.backgroundNight {
-    background-color: rgba(0, 0, 0, 0.644);
+    background-color: rgba(0, 0, 0, 0.998);
     transition: 0.5s;
   }
 }
