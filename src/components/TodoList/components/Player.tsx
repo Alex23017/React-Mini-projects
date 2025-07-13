@@ -27,7 +27,7 @@ const Player = () => {
         {playing ? "Pause" : "Play"}
       </button>
 
-      <div className={`bars-container ${playing ? "playing" : ""}`}>
+      <div className={`bars-container ${playing ? "bars-container--playing" : ""}`}>
         <div className="bar" style={{ animationDelay: "0.1s" }}></div>
         <div className="bar" style={{ animationDelay: "0s" }}></div>
         <div className="bar" style={{ animationDelay: "0.2s" }}></div>

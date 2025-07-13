@@ -4,8 +4,7 @@
   display: flex;
   align-items: flex-end; /* чтобы бары выстраивались по низу */
   justify-content: center;
-  gap:10px;
-
+  gap: 10px;
 }
 
 .bar {
@@ -18,20 +17,21 @@
   animation: none;
 }
 
-.playing .bar {
+.bars-container--playing .bar  {
   animation: heightPulse 2s ease-in-out infinite;
   animation-play-state: running;
 }
 
+
 @keyframes heightPulse {
-  0%, 100% {
+  0%,
+  100% {
     height: 20%;
     opacity: 0.2;
-
   }
   50% {
     height: 100%;
     opacity: 1;
-       transform: scale(1.1);
+    transform: scale(1.1);
   }
 }

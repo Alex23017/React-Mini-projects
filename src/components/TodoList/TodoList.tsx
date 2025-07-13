@@ -63,7 +63,7 @@ const TodoList = () => {
   };
 
   return (
-    <div style={{ backgroundImage: `url(${bgImage})` }} className="min-h-screen mt-0.5">
+    <div style={{ backgroundImage: `url(${bgImage})` }} className="min-h-screen mt-0.5 pt-40">
       <div className="flex items-center flex-col mt-0 pt-40 ">
               
  

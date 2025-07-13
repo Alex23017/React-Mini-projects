@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="container-users">
+    <div className="container-users py-40">
     <div className="App-users mt-40 drop-shadow-lg">
       {success ? (
         <Success count={invites.length} />

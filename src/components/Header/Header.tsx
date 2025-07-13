@@ -1,10 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import "./header.style.scss";
 import { useEffect, useState } from "react";
-import sun from "./assets/sun.svg";
-import moon from "./assets/moon.svg";
-import { useTheme } from "../ThemeContext/ThemeContext";
+
 import Player from "../TodoList/components/Player";
+import Theme from "../Theme/Theme";
 
 const listCat = [
   {
@@ -49,8 +48,8 @@ const listCat = [
   },
   {
     id: 9,
-    title: "Test",
-    path: "/test",
+    title: "ThemeTailWind",
+    path: "/tailwind",
   },
   {
     id: 10,
@@ -61,7 +60,7 @@ const listCat = [
 
 const Header = () => {
   const [categories, setCategories] = useState(1);
-  const { theme, toggleTheme } = useTheme();
+ 
 
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -76,7 +75,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header bg-gradient-to-r from-rose-600 via-fuchsia-800 to-black shadow-md shadow-black dark:shadow-[rgb(144,245,255)]">
+      <header className="header fixed top-0 left-0 w-full h-30 z-50  bg-gradient-to-r from-rose-600 via-fuchsia-800 to-black shadow-md shadow-black dark:shadow-[rgb(144,245,255)]">
         <nav className="nav">
           <ul className="nav-list">
             {listCat.map((item) => (
@@ -90,17 +89,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="shadow-md shadow-[rgb(144,245,255)] flex gap-10 items-center bg-gradient-to-r from-black/70 via-fuchsia-700 to-black/70 p-2 pl-6 rounded-md">
-          <div
-            onClick={toggleTheme}
-            className={`toggleDay-container w-20 shadow-md shadow-[rgb(144,245,255)] ${theme === "dark" ? "backgroundNight" : ""}`}>
-            <div className={`toggleDay-img ${theme === "dark" ? "theme_moon" : "theme_light"}`}>
-              <img
-                className={`shadow-md shadow-[rgb(144,245,255)] ${theme === "dark" ? "theme_moon" : "theme_light"}`}
-                src={theme === "dark" ? moon : sun}
-                alt=""
-              />
-            </div>
-          </div>
+         <Theme/>
           <div>
             <Player />
           </div>

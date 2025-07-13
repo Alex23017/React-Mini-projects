@@ -3,42 +3,40 @@ import master from "./assets/mastercard-3-svgrepo-com.svg";
 import vite from "./assets/vite-svgrepo-com.svg";
 import logo from "./assets/organic-organism-svgrepo-com.svg";
 import { useTheme } from "../ThemeContext/ThemeContext";
-import moon from "../Header/assets/moon.svg";
-import sun from "../Header/assets/sun.svg";
-import { useEffect, useState } from "react";
+
+import TaiwLindTheme from "./components/TaiwLindTheme";
 
 const Test = () => {
-  const [day, setDay] = useState(() => {
-    const saved = localStorage.getItem("storage")
-    return saved === "dark" || saved ==="light" ? saved: "light"
-  });
-  const clickDay = () => {
-    setDay((prevDay) => (prevDay === "light" ? "dark" : "light"));
-  };
 
+  // Use other theme and state from Taiwlind Test.component
+  // const [day, setDay] = useState(() => {
+  //   const saved = localStorage.getItem("storage");
+  //   return saved === "dark" || saved === "light" ? saved : "light";
+  // });
 
-  useEffect(() => {
-    document.body.className = day;
-    localStorage.setItem("storage", day)
+  //replace toggleTheme
+  // const clickDay = () => {
+  //   setDay((prevDay) => (prevDay === "light" ? "dark" : "light"));
+  // };
 
-  }, [day]);
+  // useEffect(() => {
+  //   document.body.className = day;
+  //   localStorage.setItem("storage", day);
+  // }, [day]);
 
-  const { theme } = useTheme();
+  const { theme } = useTheme()
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
-      <h1 className="text-5xl py-5 text-center mt-5">Tailwind</h1>
-      <header id="header" className="w-full bg-slate-400">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white pt-40">
+      <h1 className="text-5xl py-5 text-center mt-5 dark:text-white">Tailwind Theme DarkMode</h1>
+      <header id="header" className="w-full bg-slate-400 p-4">
         <nav className="flex justify-center ">
-          <ul className="flex gap-20 items-center ">
+          <ul className="flex gap-20 items-center text-2xl ">
             <img className="w-16" src={logo} alt="" />
             <li>My Profile</li>
             <li>Contact Us</li>
             <li>Help ?</li>
-            <div className="bg-amber-300/80 cursor-pointer p-2 rounded-full dark:bg-white/50 hover:translate-y-0.5">
-              <span className="day" onClick={clickDay}>
-                <img src={day === "light" ? sun : moon} alt="" />
-              </span>
-            </div>
+            <TaiwLindTheme/>
           </ul>
         </nav>
       </header>

@@ -10,7 +10,7 @@ function Modal() {
 
 
   return (
-    <div className="container-modal mt-40 ">
+    <div className="container-modal py-40 ">
       <button onClick={() => canOpen && dispatch(setOpen())} className="open-modal-btn drop-shadow-lg">
         ✨ Открыть окно
       </button>

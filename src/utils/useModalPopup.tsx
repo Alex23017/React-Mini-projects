@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { AppDispatch, RootState } from "../redux/store";
 import { setCanOpen, setOpen } from "../redux/modalSlice";
-
 
 interface RenderPopupProps {
   open: boolean;
@@ -13,19 +12,16 @@ interface RenderPopupProps {
 
 export const RenderPopup = ({ open, canOpen }: RenderPopupProps) => {
   const dispatch = useDispatch<AppDispatch>();
+
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    
     if (e.target === e.currentTarget) {
       dispatch(setOpen());
+
     }
   };
 
-  
-  
   return (
-    <div
-      onClick={handleClick}
-      className={`overlay animated ${open ? "show" : ""}`}>
+    <div onClick={handleClick} className={`overlay animated ${open ? "show" : ""}`}>
       <div className="modal">
         <svg
           onClick={() => canOpen && dispatch(setOpen())}

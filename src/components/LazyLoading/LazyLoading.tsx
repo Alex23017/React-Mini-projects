@@ -29,7 +29,7 @@ const Photo = ({ name, imageUrl }: IPhoto) => {
   });
 
   return (
-    <div ref={ref} className="container">
+    <div ref={ref} className="container pt-40">
       {inView ? (
         <img className="img shadow-md shadow-black" src={imageUrl} alt="" />
       ) : (

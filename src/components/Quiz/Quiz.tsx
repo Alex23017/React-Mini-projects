@@ -74,7 +74,7 @@ function Quiz() {
 
   return (
 
-    <div className="container-quiz mt-20">
+    <div className="container-quiz py-40">
       <div className="App-quiz">
         <h1> <strong>Опросник:</strong></h1>
       {step !== questions.length ? (

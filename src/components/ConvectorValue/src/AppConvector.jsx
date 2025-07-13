@@ -45,7 +45,7 @@ function AppConvector() {
   }, [toCurrency]);
 
   return (
-    <div className="container-convector">
+    <div className="container-convector py-40">
     <div className="App-convector">
       <Block
         onChangeValue={onChangeFromPrice}

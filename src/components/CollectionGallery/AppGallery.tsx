@@ -41,12 +41,12 @@ function AppGallery() {
   const categories = ["Горы", "Море", "Архитектура", "Города"];
 
   return (
-    <div className="container-gallery">
+    <div className="container-gallery py-40">
       <div className="App-gallery ">
         <div className="container-menu">
           <h1 className="title-gallery">Моя коллекция фотографий</h1>
           <div className="top"></div>
-          <ul className="tags">
+          <ul className="tags mt-5">
             {isLoading ? (
               <h3 className="title-loading" style={{ marginRight: "20px" }}>
                 Загрузка изображений...
