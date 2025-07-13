@@ -89,7 +89,7 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <div className="flex gap-10 items-center bg-gradient-to-r from-black/70 via-fuchsia-700 to-black/70 p-2 pl-6 rounded-md">
+        <div className="shadow-md shadow-[rgb(144,245,255)] flex gap-10 items-center bg-gradient-to-r from-black/70 via-fuchsia-700 to-black/70 p-2 pl-6 rounded-md">
           <div
             onClick={toggleTheme}
             className={`toggleDay-container w-20 shadow-md shadow-[rgb(144,245,255)] ${theme === "dark" ? "backgroundNight" : ""}`}>
