@@ -56,6 +56,17 @@ const listCat = [
     title: "TodoList",
     path: "/todolist",
   },
+  {
+    id: 11,
+    title: "Game",
+    path: "/game",
+  },
+  {
+    id: 12,
+    title: "Test",
+    path: "/test",
+  },
+
 ];
 
 const Header = () => {

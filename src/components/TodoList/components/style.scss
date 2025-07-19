@@ -1,8 +1,8 @@
 .bars-container {
-  width: 100px; /* или под себя */
-  height: 50px; /* фиксированная высота */
+  width: 100px; 
+  height: 50px; 
   display: flex;
-  align-items: flex-end; /* чтобы бары выстраивались по низу */
+  align-items: flex-end; 
   justify-content: center;
   gap: 10px;
 }
@@ -10,7 +10,7 @@
 .bar {
   width: 4px;
   background-color: white;
-  height: 20%; /* 20% от 50px = 10px */
+  height: 20%; 
   border-radius: 2px;
   opacity: 0.2;
   transition: opacity 0.3s ease;
@@ -19,7 +19,6 @@
 
 .bars-container--playing .bar  {
   animation: heightPulse 2s ease-in-out infinite;
-  animation-play-state: running;
 }
 
 

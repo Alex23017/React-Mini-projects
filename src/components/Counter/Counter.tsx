@@ -4,10 +4,13 @@ import { increment, decrement } from "../../redux/counterSlice";
 import useModalCounter from "../../utils/useModalCounter";
 import backImage from "./assets/backgroundCounter.jpg";
 import "./index.scss";
+import { useDeferredValue, useEffect } from "react";
 
 const Counter = () => {
   const { count, canAdd } = useModalCounter();
   const dispatch = useDispatch<AppDispatch>();
+
+
 
   return (
       <div

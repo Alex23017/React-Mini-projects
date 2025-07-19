@@ -10,11 +10,13 @@ import RenderApp from "./components/UsersRender/App";
 import AppConvector from "./components/ConvectorValue/src/AppConvector";
 import AppGallery from "./components/CollectionGallery/AppGallery";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
-import Test from "./components/Test/Test";
 import TodoList from "./components/TodoList/TodoList";
-import Theme from "./components/Theme/Theme";
-import TaiwLindTheme from "./components/Test/components/TaiwLindTheme";
 import ScrollUp from "./components/ScrollUp/ScrollUp";
+import Game from "./components/Game/Game";
+import Test from "./components/Test/Test";
+import TaiwLindTheme from "./components/ThemeTailwind/components/TaiwLindTheme";
+import AppTailwind from "./components/ThemeTailwind/AppTailwind";
+
 
 function App() {
   const location = useLocation();
@@ -31,7 +33,7 @@ function App() {
       <div className="fixed right-20 bottom-20  ">
         <TaiwLindTheme />
       </div>
-
+      
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/counter"} element={<Counter />} />
@@ -41,8 +43,11 @@ function App() {
         <Route path={"/convector"} element={<AppConvector />} />
         <Route path={"/gallery"} element={<AppGallery />} />
         <Route path={"/lazyloading"} element={<LazyLoading />} />
-        <Route path={"/tailwind"} element={<Test />} />
+        <Route path={"/tailwind"} element={<AppTailwind />} />
         <Route path={"/todolist"} element={<TodoList />} />
+        <Route path={"/game"} element={<Game />} />
+        <Route path={"/test"} element={<Test />} />
+
       </Routes>
     </div>
   );

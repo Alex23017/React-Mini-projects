@@ -9,7 +9,6 @@ export interface UserData {
   avatar: string;
 }
 
-
 interface iUsers {
   users: UserData[];
   invites: number[];
@@ -28,12 +27,13 @@ const initialState: iUsers = {
   error: "",
 };
 
-export const fetchUsers = createAsyncThunk("fetchUsers/users", async () => {
+export const fetchUsers = createAsyncThunk("fetchUsers/users", async (_, { signal }) => {
   try {
     const response = await fetch("https://reqres.in/api/users", {
       headers: {
         "x-api-key": "reqres-free-v1",
       },
+      signal,
     });
 
     if (!response.ok) {

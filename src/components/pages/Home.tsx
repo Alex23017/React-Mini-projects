@@ -20,27 +20,7 @@ const Home = () => {
       <Link to={"/modal"}>
         <Modal />
       </Link>
-      <Link to={"/quiz"}>
-        <Quiz />
-      </Link>
 
-      <Link to={"/users"}>
-        <RenderApp />
-      </Link>
-
-      <Link to={"/convector"}>
-        <AppConvector />
-      </Link>
-      <Link to={"/gallery"}>
-        <AppGallery />
-      </Link>
-      <Link to={"/lazyloading"}>
-        <LazyLoading />
-      </Link>
-
-      <Link to={"/test"}>
-        <Test />
-      </Link>
       <Link to={"/todolist"}>
         <TodoList />
       </Link>
