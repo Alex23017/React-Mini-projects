@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Alex23017/React-Mini-projects/static/css/main.d00a20fb.css",
-    "main.js": "/Alex23017/React-Mini-projects/static/js/main.40037919.js",
-    "static/media/melodyplayer.cyber.mp3": "/Alex23017/React-Mini-projects/static/media/melodyplayer.cyber.0217df5bb77f5c2a8d5f.mp3",
-    "static/media/bdQuiz.jpg": "/Alex23017/React-Mini-projects/static/media/bdQuiz.01a075a113c05d3e7e0c.jpg",
-    "static/media/backgroundCounter.jpg": "/Alex23017/React-Mini-projects/static/media/backgroundCounter.d9e13109427011f3b7b5.jpg",
-    "static/media/cyberBG.jpg": "/Alex23017/React-Mini-projects/static/media/cyberBG.37759bbeec15eb03433e.jpg",
-    "static/media/bgModal.jpg": "/Alex23017/React-Mini-projects/static/media/bgModal.9ae52063fbaf8a56382c.jpg",
-    "static/media/mastercard-3-svgrepo-com.svg": "/Alex23017/React-Mini-projects/static/media/mastercard-3-svgrepo-com.a78305bd4c49e8832a0104623c1db602.svg",
-    "static/media/sun.svg": "/Alex23017/React-Mini-projects/static/media/sun.f8606845ee97bee21c3bc95b2dec3866.svg",
-    "static/media/moon.svg": "/Alex23017/React-Mini-projects/static/media/moon.312bed9230c94183d589bcc499993093.svg",
-    "static/media/success.svg": "/Alex23017/React-Mini-projects/static/media/success.4e08f49e92f6329b379e8b6827203a42.svg",
-    "static/media/visa-svgrepo-com.svg": "/Alex23017/React-Mini-projects/static/media/visa-svgrepo-com.b4133ff1f673f1ea59fae21ded8c292d.svg",
-    "static/media/vite-svgrepo-com.svg": "/Alex23017/React-Mini-projects/static/media/vite-svgrepo-com.d093fea5c37d0d5a4568150e2e326166.svg",
-    "static/media/organic-organism-svgrepo-com.svg": "/Alex23017/React-Mini-projects/static/media/organic-organism-svgrepo-com.f9cc71eb818f32e0a5ab19ae5767af86.svg",
-    "index.html": "/Alex23017/React-Mini-projects/index.html",
-    "static/media/plus.svg": "/Alex23017/React-Mini-projects/static/media/plus.1931cf72fa3019e723886b136ffe0eee.svg",
-    "static/media/minus.svg": "/Alex23017/React-Mini-projects/static/media/minus.494f644a0286985edebe0fb3f79390a0.svg",
-    "main.d00a20fb.css.map": "/Alex23017/React-Mini-projects/static/css/main.d00a20fb.css.map",
-    "main.40037919.js.map": "/Alex23017/React-Mini-projects/static/js/main.40037919.js.map"
+    "main.css": "/React-Mini-projects/static/css/main.d00a20fb.css",
+    "main.js": "/React-Mini-projects/static/js/main.949f1118.js",
+    "static/media/melodyplayer.cyber.mp3": "/React-Mini-projects/static/media/melodyplayer.cyber.0217df5bb77f5c2a8d5f.mp3",
+    "static/media/bdQuiz.jpg": "/React-Mini-projects/static/media/bdQuiz.01a075a113c05d3e7e0c.jpg",
+    "static/media/backgroundCounter.jpg": "/React-Mini-projects/static/media/backgroundCounter.d9e13109427011f3b7b5.jpg",
+    "static/media/cyberBG.jpg": "/React-Mini-projects/static/media/cyberBG.37759bbeec15eb03433e.jpg",
+    "static/media/bgModal.jpg": "/React-Mini-projects/static/media/bgModal.9ae52063fbaf8a56382c.jpg",
+    "static/media/mastercard-3-svgrepo-com.svg": "/React-Mini-projects/static/media/mastercard-3-svgrepo-com.a78305bd4c49e8832a0104623c1db602.svg",
+    "static/media/sun.svg": "/React-Mini-projects/static/media/sun.f8606845ee97bee21c3bc95b2dec3866.svg",
+    "static/media/moon.svg": "/React-Mini-projects/static/media/moon.312bed9230c94183d589bcc499993093.svg",
+    "static/media/success.svg": "/React-Mini-projects/static/media/success.4e08f49e92f6329b379e8b6827203a42.svg",
+    "static/media/visa-svgrepo-com.svg": "/React-Mini-projects/static/media/visa-svgrepo-com.b4133ff1f673f1ea59fae21ded8c292d.svg",
+    "static/media/vite-svgrepo-com.svg": "/React-Mini-projects/static/media/vite-svgrepo-com.d093fea5c37d0d5a4568150e2e326166.svg",
+    "static/media/organic-organism-svgrepo-com.svg": "/React-Mini-projects/static/media/organic-organism-svgrepo-com.f9cc71eb818f32e0a5ab19ae5767af86.svg",
+    "index.html": "/React-Mini-projects/index.html",
+    "static/media/plus.svg": "/React-Mini-projects/static/media/plus.1931cf72fa3019e723886b136ffe0eee.svg",
+    "static/media/minus.svg": "/React-Mini-projects/static/media/minus.494f644a0286985edebe0fb3f79390a0.svg",
+    "main.d00a20fb.css.map": "/React-Mini-projects/static/css/main.d00a20fb.css.map",
+    "main.949f1118.js.map": "/React-Mini-projects/static/js/main.949f1118.js.map"
   },
   "entrypoints": [
     "static/css/main.d00a20fb.css",
-    "static/js/main.40037919.js"
+    "static/js/main.949f1118.js"
   ]
 }
