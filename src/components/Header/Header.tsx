@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./header.style.scss";
 import { useEffect, useState } from "react";
 
-import Player from "../TodoList/components/Player";
+import Player from "./components/Player";
 import Theme from "../Theme/Theme";
 
 const listCat = [
@@ -66,12 +66,10 @@ const listCat = [
     title: "Test",
     path: "/test",
   },
-
 ];
 
 const Header = () => {
   const [categories, setCategories] = useState(1);
- 
 
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -100,7 +98,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="shadow-md shadow-[rgb(144,245,255)] flex gap-10 items-center bg-gradient-to-r from-black/70 via-fuchsia-700 to-black/70 p-2 pl-6 rounded-md">
-         <Theme/>
+          <Theme />
           <div>
             <Player />
           </div>

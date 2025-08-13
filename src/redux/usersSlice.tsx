@@ -1,5 +1,10 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 
+enum STATUS {
+  LOADING = "loading",
+  PENDING = "pending",
+  ERROR = "error",
+}
 
 export interface UserData {
   id: number;
@@ -16,6 +21,7 @@ interface iUsers {
   search: string;
   success: boolean;
   error: string;
+  status: STATUS;
 }
 
 const initialState: iUsers = {
@@ -25,6 +31,7 @@ const initialState: iUsers = {
   success: false,
   search: "",
   error: "",
+  status: STATUS.LOADING,
 };
 
 export const fetchUsers = createAsyncThunk("fetchUsers/users", async (_, { signal }) => {
@@ -71,16 +78,19 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsers.pending, (state) => {
-        state.users = [];
+        state.status = STATUS.LOADING;
         state.isLoading = true;
+        state.users = [];
         state.error = "";
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.users = action.payload;
+        state.status = STATUS.PENDING;
         state.isLoading = false;
+        state.users = action.payload;
         state.error = "";
       })
       .addCase(fetchUsers.rejected, (state, action) => {
+        state.status = STATUS.ERROR;
         state.isLoading = false;
         state.error = action.error.message || "Ошибка загрузки пользователей";
       });

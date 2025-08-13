@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import bgImage from "./assets/cyberBG.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../redux/store";
+
 import {
   addNote,
   saveEdit,
@@ -10,33 +11,33 @@ import {
   cancelEdit,
   isOpen,
   setNewNote,
-  setValue,
   initNotes,
 } from "../../redux/TodoSlice";
 import { debounce, DebouncedFunc } from "lodash";
 
 const TodoList = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const dispatch = useDispatch<AppDispatch>();
-  const { notes, value, isOpenEdit, newNote, idNote } = useSelector(
-    (state: RootState) => state.todo,
-  );
-  const ref = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+
   const debounceRef = useRef<DebouncedFunc<(value: string) => void>>(null);
 
   useEffect(() => {
     debounceRef.current = debounce((value: string) => {
-      dispatch(setValue(value));
+      setSearchValue(value);
     }, 500);
-
-    if (searchTerm !== undefined) {
-      debounceRef.current(searchTerm);
-    }
 
     return () => {
       debounceRef.current?.cancel();
     };
-  }, [searchTerm, dispatch]);
+  }, []);
+
+  useEffect(() => {
+    debounceRef.current?.(inputValue);
+  }, [inputValue]);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { notes, isOpenEdit, newNote, idNote } = useSelector((state: RootState) => state.todo);
+  const ref = useRef<HTMLTextAreaElement |null >(null);
 
   useEffect(() => {
     const storedNotes = localStorage.getItem("noteStorage");
@@ -50,14 +51,14 @@ const TodoList = () => {
   }, [notes]);
 
   const handleAddNote = () => {
-    if (!value.trim()) return;
+    if (!inputValue.trim()) return;
     const newNote = {
-      text: value,
+      text: inputValue,
       id: Date.now(),
       number: notes.length + 1,
     };
     dispatch(addNote(newNote));
-    dispatch(setValue(""));
+    setInputValue("");
     ref.current?.focus();
   };
 
@@ -75,66 +76,84 @@ const TodoList = () => {
           shadow-md shadow-[rgb(144,245,255)] dark:shadow-gray-300 flex-col gap-5 items-center ">
           {!isOpenEdit && (
             <>
-              <div className="w-2/3">
-                <input
+              <div className="px-10 w-full">
+                <textarea
                   ref={ref}
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
                   placeholder="write or search note..."
-                  className="focus:shadow-[rgb(144,245,255)] italic font-medium text-black focus:shadow-lg
-                    shadow-black/50 p-2 rounded-lg text-center w-full text-black/60 break-words shadow-md"
+                  className="focus:shadow-[rgb(144,245,255)] italic 
+                  font-medium text-black focus:shadow-lg
+                    shadow-black/50 p-2 rounded-lg text-center w-full
+                     text-black/60 break-words shadow-md resize-none"
                 />
               </div>
 
               <div className="animate-pulse hover:animate-none flex flex-col">
                 <button
                   onClick={handleAddNote}
-                  className="active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg animate-shadow-color-change
-                    hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-2 transition ease-out duration-200 
-                    mt-4 px-20 py-3 bg-red-400 font-bold text-white hover:bg-red-500 rounded-xl">
+                  className="active:shadow-white/50 dark:active:shadow-white/50
+                   active:shadow-lg animate-shadow-color-change
+                    hover:animate-none drop-shadow-lg shadow-black/40 
+                    active:translate-y-2 transition ease-out duration-200 
+                    mt-4 px-20 py-3 bg-red-400 font-bold text-white
+                     hover:bg-red-500 rounded-xl px-2">
                   ADD NOTE
                 </button>
+
                 {notes.length > 0 && (
                   <button
                     onClick={() => dispatch(removeAll())}
-                    className="active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg animate-shadow-color-change 
-                      hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-2 transition ease-out 
-                      duration-200 mt-4 px-20 py-3 bg-black font-bold text-white hover:bg-red-500 rounded-xl">
+                    className="active:shadow-white/50 dark:active:shadow-white/50 
+                    active:shadow-lg animate-shadow-color-change 
+                      hover:animate-none drop-shadow-lg shadow-black/40 
+                      active:translate-y-2 transition ease-out 
+                      duration-200 mt-4 px-20 py-3 bg-black font-bold
+                       text-white hover:bg-red-500 rounded-xl">
                     Remove All
                   </button>
                 )}
               </div>
 
-              <ul className="w-2/3 p-2 flex flex-col gap-4">
+              <ul className="p-2 w-full flex flex-col gap-4">
                 {notes
                   .filter(
                     (note) =>
-                      note.text.toLowerCase().includes(value.toLowerCase()) ||
-                      note.number.toString().includes(value),
+                      note.text.toLowerCase().includes(searchValue.toLowerCase()) ||
+                      note.number.toString().includes(searchValue),
                   )
                   .map((note) => (
                     <li
                       key={note.id}
-                      className="bg-white/90 p-2 flex flex-col break-words rounded-md italic font-serif 
+                      className="bg-white/90 p-2 flex flex-col break-words
+                       rounded-md italic font-serif 
                         shadow-[rgb(144,245,255)] shadow-md">
                       <div className="flex flex-shrink-1">
-                        <h2 className="bg-red-300 px-3 py-1 rounded-full text-black shadow-md shadow-black mb-4">
+                        <h2
+                          className="bg-red-300 px-3 py-1 rounded-full
+                         text-black shadow-md shadow-black mb-4">
                           {note.number}
                         </h2>
                       </div>
                       <span>{note.text}</span>
                       <button
                         onClick={() => dispatch(isOpen(note))}
-                        className="self-center w-4/12 active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg 
-                          animate-shadow-color-change hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-1 
-                          transition ease-out duration-200 mt-4 py-2 bg-red-400 font-bold text-white hover:bg-red-700 rounded-xl">
+                        className="self-center w-4/12 active:shadow-white/50
+                         dark:active:shadow-white/50 active:shadow-lg 
+                          animate-shadow-color-change hover:animate-none 
+                          drop-shadow-lg shadow-black/40 active:translate-y-1 
+                          transition ease-out duration-200 mt-4 py-2
+                           bg-red-400 font-bold text-white hover:bg-red-700 rounded-xl">
                         Edit note
                       </button>
                       <button
                         onClick={() => dispatch(removeNote(note.id))}
-                        className="self-center w-4/12 active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg 
-                          animate-shadow-color-change hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-1 
-                          transition ease-out duration-200 mt-4 py-2 bg-black font-bold text-white hover:bg-red-700 rounded-xl">
+                        className="self-center w-4/12 active:shadow-white/50
+                         dark:active:shadow-white/50 active:shadow-lg 
+                          animate-shadow-color-change hover:animate-none 
+                          drop-shadow-lg shadow-black/40 active:translate-y-1 
+                          transition ease-out duration-200 mt-4 py-2
+                           bg-black font-bold text-white hover:bg-red-700 rounded-xl">
                         Delete note
                       </button>
                     </li>
@@ -146,13 +165,15 @@ const TodoList = () => {
           {isOpenEdit && (
             <>
               <div className="w-2/3">
-                <input
+                <textarea
                   ref={ref}
                   value={newNote}
                   onChange={(e) => dispatch(setNewNote(e.target.value))}
                   placeholder="Your note here..."
-                  className="focus:shadow-[rgb(144,245,255)] italic font-medium text-black focus:shadow-lg
-                    shadow-black/50 p-2 rounded-lg text-center w-full text-black/60 break-words shadow-md"
+                  className="focus:shadow-[rgb(144,245,255)] italic
+                   font-medium text-black focus:shadow-lg
+                    shadow-black/50 p-2 rounded-lg text-center w-full
+                     text-black/60 break-words shadow-md resize-none"
                 />
               </div>
 
@@ -162,26 +183,35 @@ const TodoList = () => {
                   .map((note) => (
                     <li
                       key={note.id}
-                      className="bg-white/90 p-2 flex flex-col break-words rounded-md italic font-serif 
+                      className="bg-white/90 p-2 flex flex-col break-words
+                       rounded-md italic font-serif 
                         shadow-[rgb(144,245,255)] shadow-md">
                       <div className="flex flex-shrink-1">
-                        <h2 className="bg-red-300 px-3 py-1 rounded-full text-black shadow-md shadow-black mb-4">
+                        <h2
+                          className="bg-red-300 px-3 py-1 rounded-full
+                         text-black shadow-md shadow-black mb-4">
                           {note.number}
                         </h2>
                       </div>
                       <span>{note.text}</span>
                       <button
                         onClick={() => dispatch(saveEdit(newNote))}
-                        className="self-center w-4/12 active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg 
-                          animate-shadow-color-change hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-1 
-                          transition ease-out duration-200 mt-4 py-2 bg-red-400 font-bold text-white hover:bg-red-700 rounded-xl">
+                        className="self-center w-4/12 active:shadow-white/50
+                         dark:active:shadow-white/50 active:shadow-lg 
+                          animate-shadow-color-change hover:animate-none drop-shadow-lg
+                           shadow-black/40 active:translate-y-1 
+                          transition ease-out duration-200 mt-4 py-2 bg-red-400
+                          font-bold text-white hover:bg-red-700 rounded-xl">
                         Save Edit
                       </button>
                       <button
                         onClick={() => dispatch(cancelEdit())}
-                        className="self-center w-4/12 active:shadow-white/50 dark:active:shadow-white/50 active:shadow-lg 
-                          animate-shadow-color-change hover:animate-none drop-shadow-lg shadow-black/40 active:translate-y-1 
-                          transition ease-out duration-200 mt-4 py-2 bg-black font-bold text-white hover:bg-red-700 rounded-xl">
+                        className="self-center w-4/12 active:shadow-white/50
+                         dark:active:shadow-white/50 active:shadow-lg 
+                          animate-shadow-color-change hover:animate-none
+                           drop-shadow-lg shadow-black/40 active:translate-y-1 
+                          transition ease-out duration-200 mt-4 py-2 bg-black
+                          font-bold text-white hover:bg-red-700 rounded-xl">
                         Cancel edit
                       </button>
                     </li>

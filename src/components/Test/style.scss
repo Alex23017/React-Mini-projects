@@ -1,0 +1,25 @@
+form {
+  font-size: 20px;
+  > input,
+  > textarea {
+    width: 100%;
+    display: block;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    background-color: rgba(0, 0, 0, 0.678);
+    border-radius: 10px;
+    color: white;
+    &:focus {
+      border-color: purple;
+    }
+  }
+}
+
+> textarea {
+  height: 10rem;
+  resize: none;
+  margin: 15px auto;
+}

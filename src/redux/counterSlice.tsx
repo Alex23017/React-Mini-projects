@@ -26,7 +26,7 @@ const counterSlice = createSlice({
     setCount(state) {
       state.count = 0;
     },
-  },
+  }, 
 });
 
 export const { increment, decrement, setCanAdd, setCount } = counterSlice.actions;

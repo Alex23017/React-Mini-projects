@@ -8,7 +8,6 @@ interface INote {
 
 interface IState {
   notes: INote[];
-  value: string;
   isOpenRemove: boolean;
   isOpenEdit: boolean;
   newNote: string;
@@ -18,7 +17,6 @@ interface IState {
 const initialState: IState = {
   isOpenEdit: false,
   notes: [],
-  value: "",
   isOpenRemove: false,
   newNote: "",
   idNote: null,
@@ -66,9 +64,6 @@ export const TodoSlice = createSlice({
       state.newNote = action.payload;
     },
 
-    setValue(state, action: PayloadAction<string>) {
-      state.value = action.payload;
-    },
     initNotes: (state, action: PayloadAction<INote[]>) => {
       state.notes = action.payload;
     },
@@ -83,7 +78,6 @@ export const {
   cancelEdit,
   isOpen,
   setNewNote,
-  setValue,
   initNotes,
 } = TodoSlice.actions;
 

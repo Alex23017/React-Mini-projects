@@ -27,18 +27,20 @@
     "noUnusedParameters": false /* Выдает ошибку для неиспользуемых параметров. */,
     "plugins": [
       {
-        "name": "typescript-plugin-css-modules" /* Плагин для поддержки CSS Modules, если вы их используете. */
+        "name": "typescript-plugin-css-modules" 
       }
     ]
   },
   "include": [
-    /* Массив паттернов glob, определяющих файлы для включения в компиляцию. */ "src/**/*.ts",
+ "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.d.ts",
-    "src/utils/useModalPopup.tsx"
-, "src/components/ConvectorValue/src/AppConvector.jsx", "src/components/TodoList/components/Player.tsx"  ],
+    "src/utils/useModalPopup.tsx",
+    "src/components/ConvectorValue/src/AppConvector.jsx",
+    "src/components/Header/components/Player.tsx"
+  ],
   "exclude": [
-    /* Массив паттернов glob, определяющих файлы для исключения из компиляции. */ "node_modules",
+ "node_modules",
     "build",
     "dist"
   ]

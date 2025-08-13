@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import melody from "../assets/melodyplayer.cyber.mp3";
+import { useRef, useState } from "react";
+import melody from "./music/melodyplayer.cyber.mp3";
 import "./style.scss";
 
 const Player = () => {

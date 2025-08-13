@@ -1,49 +1,74 @@
-import { useEffect, useRef, useState } from "react";
-import { debounce, DebouncedFunc } from "lodash";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import "./style.scss";
 
-const listCard = [
-  { id: 1, name: "alex", age: 20 },
-  { id: 2, name: "Dima", age: 11 },
-  { id: 3, name: "Anna", age: 26 },
-];
+
+interface IForm {
+  "e-mail": string;
+  message: string;
+  isImportant: boolean;
+}
 
 const Test = () => {
-  const debounceRef = useRef<DebouncedFunc<(value: string) => void | null>>(null);
-  const [list, setList] = useState(listCard);
-  const [value, setValue] = useState("");
+  const { register, handleSubmit, formState, control } = useForm<IForm>({
+    mode: "onChange",
+  });
 
-  useEffect(() => {
-    debounceRef.current = debounce((value: string) => {
-      const filteredList = listCard.filter((item) =>
-        item.name.toLowerCase().includes(value.trim().toLowerCase()),
-      );
-      setList(filteredList);
-    }, 500);
-    return () => {
-      debounceRef.current?.cancel();
-    };
-  }, []);
+  const emailError = formState.errors["e-mail"]?.message;
+  const areaTextError = formState.errors["message"]?.message;
 
-  useEffect(() => {
-    debounceRef.current?.(value)
-    
-  },[value])
-
-
+  const onSubmit: SubmitHandler<IForm> = (data) => {
+    console.log(data);
+  };
 
   return (
-    <div className="flex justify-center text-2xl items-center h-screen flex-col">
-      <div>
+    <div
+      className=" items-center h-screen flex justify-center 
+    mt-96 text-center flex-col">
+      <h1 className="text-3xl">Feedback form</h1>
+      {/* <button onClick={()=> reset()}>RESET</button> */}
+      <form onSubmit={handleSubmit(onSubmit)} className="flex  w-2/4 flex-col gap-5">
         <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          type="text"
-          placeholder="search"
+          type="email"
+          placeholder="Enter e-mail"
+          {...register("e-mail", {
+            required: "This field is requeied",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Введите корректный email адрес",
+            },
+          })}
         />
-        {list.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </div>
+        {emailError && <p className="text-red-500">{emailError}</p>}
+        <textarea
+          {...register("message", {
+            required: "Поле обязательно для заполнения",
+            minLength: {
+              value: 10,
+              message: "Минимум 10 символов",
+            },
+          })}
+          placeholder="Enter message"
+          className="border p-2"
+        />
+
+        {areaTextError && <p className="text-red-500">{areaTextError}</p>}
+
+        <Controller
+          control={control}
+          name="isImportant"
+          render={({ field }) => (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                field.onChange(!field.value);
+              }}>
+              {!!field.value ? "ВАЖНОЕ" : "НЕ ВАЖНОЕ"}
+            </button>
+          )}
+        />
+
+        <button type="submit">Send</button>
+      </form>
     </div>
   );
 };

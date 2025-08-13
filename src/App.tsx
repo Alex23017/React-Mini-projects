@@ -18,6 +18,9 @@ import TaiwLindTheme from "./components/ThemeTailwind/components/TaiwLindTheme";
 import AppTailwind from "./components/ThemeTailwind/AppTailwind";
 
 
+
+
+
 function App() {
   const location = useLocation();
   useEffect(() => {
@@ -33,7 +36,7 @@ function App() {
       <div className="fixed right-20 bottom-20  ">
         <TaiwLindTheme />
       </div>
-      
+
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/counter"} element={<Counter />} />
@@ -47,7 +50,6 @@ function App() {
         <Route path={"/todolist"} element={<TodoList />} />
         <Route path={"/game"} element={<Game />} />
         <Route path={"/test"} element={<Test />} />
-
       </Routes>
     </div>
   );
