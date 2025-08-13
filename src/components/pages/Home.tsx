@@ -1,28 +1,27 @@
-import Counter from "../Counter/Counter";
 import { Link } from "react-router-dom";
-import "../../App.scss";
-import "./home_style.scss";
+import Counter from "../Counter/Counter";
 import Modal from "../Modal/Modal";
-import Quiz from "../Quiz/Quiz";
-import RenderApp from "../UsersRender/App";
-import AppConvector from "../ConvectorValue/src/AppConvector";
-import AppGallery from "../CollectionGallery/AppGallery";
-import Test from "../LazyLoading/LazyLoading";
-import LazyLoading from "../LazyLoading/LazyLoading";
 import TodoList from "../TodoList/TodoList";
 
 const Home = () => {
   return (
-    <div className="container-items">
-      <Link to={"/counter"}>
-        <Counter />
-      </Link>
-      <Link to={"/modal"}>
-        <Modal />
+    <div>
+      <Link to="/counter">
+        <div>
+          <Counter />
+        </div>
       </Link>
 
-      <Link to={"/todolist"}>
-        <TodoList />
+      <Link to="/modal">
+        <div>
+          <Modal />
+        </div>
+      </Link>
+
+      <Link to="/todolist">
+        <div>
+          <TodoList />
+        </div>
       </Link>
     </div>
   );
