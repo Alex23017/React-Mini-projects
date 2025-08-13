@@ -27,7 +27,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <HashRouter>
+    <>
       <ScrollToTop />
       <div className="wrapper h-screen w-screen">
         <Header />
@@ -53,7 +53,7 @@ function App() {
           <Route path="test" element={<Test />} />
         </Routes>
       </div>
-    </HashRouter>
+    </>
   );
 }
 
