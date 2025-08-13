@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Mini-projects/static/css/main.d00a20fb.css",
-    "main.js": "/React-Mini-projects/static/js/main.795327dd.js",
+    "main.css": "/React-Mini-projects/static/css/main.dea2d6c6.css",
+    "main.js": "/React-Mini-projects/static/js/main.f7a9554c.js",
     "static/media/melodyplayer.cyber.mp3": "/React-Mini-projects/static/media/melodyplayer.cyber.0217df5bb77f5c2a8d5f.mp3",
     "static/media/bdQuiz.jpg": "/React-Mini-projects/static/media/bdQuiz.01a075a113c05d3e7e0c.jpg",
     "static/media/backgroundCounter.jpg": "/React-Mini-projects/static/media/backgroundCounter.d9e13109427011f3b7b5.jpg",
@@ -17,11 +17,11 @@
     "index.html": "/React-Mini-projects/index.html",
     "static/media/plus.svg": "/React-Mini-projects/static/media/plus.1931cf72fa3019e723886b136ffe0eee.svg",
     "static/media/minus.svg": "/React-Mini-projects/static/media/minus.494f644a0286985edebe0fb3f79390a0.svg",
-    "main.d00a20fb.css.map": "/React-Mini-projects/static/css/main.d00a20fb.css.map",
-    "main.795327dd.js.map": "/React-Mini-projects/static/js/main.795327dd.js.map"
+    "main.dea2d6c6.css.map": "/React-Mini-projects/static/css/main.dea2d6c6.css.map",
+    "main.f7a9554c.js.map": "/React-Mini-projects/static/js/main.f7a9554c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d00a20fb.css",
-    "static/js/main.795327dd.js"
+    "static/css/main.dea2d6c6.css",
+    "static/js/main.f7a9554c.js"
   ]
 }
