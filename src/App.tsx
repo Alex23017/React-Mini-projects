@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Counter from "./components/Counter/Counter";
 import "./App.scss";
@@ -17,41 +17,43 @@ import Test from "./components/Test/Test";
 import TaiwLindTheme from "./components/ThemeTailwind/components/TaiwLindTheme";
 import AppTailwind from "./components/ThemeTailwind/AppTailwind";
 
-
-
-
-
-function App() {
+function ScrollToTop() {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+  return null;
+}
 
+function App() {
   return (
-    <div className="wrapper h-screen w-screen">
-      <Header />
-      <div className="fixed right-20 bottom-56">
-        <ScrollUp />
-      </div>
-      <div className="fixed right-20 bottom-20  ">
-        <TaiwLindTheme />
-      </div>
+    <HashRouter>
+      <ScrollToTop />
+      <div className="wrapper h-screen w-screen">
+        <Header />
+        <div className="fixed right-20 bottom-56">
+          <ScrollUp />
+        </div>
+        <div className="fixed right-20 bottom-20">
+          <TaiwLindTheme />
+        </div>
 
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/counter"} element={<Counter />} />
-        <Route path={"/modal"} element={<Modal />} />
-        <Route path={"/quiz"} element={<Quiz />} />
-        <Route path={"/users"} element={<RenderApp />} />
-        <Route path={"/convector"} element={<AppConvector />} />
-        <Route path={"/gallery"} element={<AppGallery />} />
-        <Route path={"/lazyloading"} element={<LazyLoading />} />
-        <Route path={"/tailwind"} element={<AppTailwind />} />
-        <Route path={"/todolist"} element={<TodoList />} />
-        <Route path={"/game"} element={<Game />} />
-        <Route path={"/test"} element={<Test />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="counter" element={<Counter />} />
+          <Route path="modal" element={<Modal />} />
+          <Route path="quiz" element={<Quiz />} />
+          <Route path="users" element={<RenderApp />} />
+          <Route path="convector" element={<AppConvector />} />
+          <Route path="gallery" element={<AppGallery />} />
+          <Route path="lazyloading" element={<LazyLoading />} />
+          <Route path="tailwind" element={<AppTailwind />} />
+          <Route path="todolist" element={<TodoList />} />
+          <Route path="game" element={<Game />} />
+          <Route path="test" element={<Test />} />
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
 
