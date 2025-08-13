@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/Alex23017/React-Mini-projects",
   "name": "counter",
   "version": "0.1.0",
   "private": true,
@@ -32,6 +33,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/lodash": "^4.17.20",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "husky": "^8.0.0",
     "lint-staged": "^16.1.2",
     "postcss": "^8.5.6",
@@ -44,7 +46,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
